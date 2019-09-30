@@ -1,0 +1,7 @@
+<h1><%= @post.title %></h1>
+<h3>By: @<%= link_to @post.user.handle, user_path(@post.user) %></h3>
+<p><%= @post.content %></p>
+<br>
+<%= button_to 'Edit Post', edit_post_path, method: :get %>
+<br>
+<%= button_to 'Delete Post', post_path(@post), method: :delete %>

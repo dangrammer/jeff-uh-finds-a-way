@@ -1,0 +1,8 @@
+<h1>Jeff Lovers Unite</h1>
+
+<% @users.each do |user| %>
+  <ul>
+    <li><%= link_to user.handle, user_path(user) %></li>
+    
+  </ul>
+<% end %>

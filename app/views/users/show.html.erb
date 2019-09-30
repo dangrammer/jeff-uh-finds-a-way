@@ -1,0 +1,14 @@
+<h1>Your Profile</h1>
+
+<h2>Name: <%= @user.full_name %></h2>
+<ul>
+  <li>Handle: @<%= @user.handle %></li>
+  <li>Location: <%= @user.location %></li>
+  <li>Bio: <%= @user.bio %></li>
+</ul>
+<br>
+<img src="<%= @user.img_url %>", alt="User Photo", height="100", width="100">
+<br>
+<%= button_to 'Edit Account', edit_user_path, method: :get %>
+<br>
+<%= button_to 'Delete Account', user_path, method: :delete %>

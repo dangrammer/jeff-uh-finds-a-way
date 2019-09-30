@@ -1,0 +1,26 @@
+<h1>Edit Profile</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <br>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <br>
+  <%= f.label :handle %>
+  <%= f.text_field :handle %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <br>
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
+  <br>
+  <%= f.label :img_url %>
+  <%= f.text_field :img_url %>
+  <br>
+  <%= f.submit %>
+<% end %>
