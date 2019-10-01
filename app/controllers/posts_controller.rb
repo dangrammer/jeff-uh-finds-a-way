@@ -7,12 +7,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @users = User.all
     @categories = Category.all
   end
 
   def create
-    @post = Post.create(posts_params)
+    @post = Post.create(post_params.merge(user_id: @current_user.id))
     redirect_to post_path(@post)
   end
 
@@ -25,7 +24,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(posts_params)
+    @post.update(post_params)
     redirect_to post_path(@post)
   end
 
@@ -36,7 +35,7 @@ class PostsController < ApplicationController
 
   private
 
-  def posts_params
+  def post_params
     params.require(:post).permit(:title, :content, :user_id, :category_id)
   end
 

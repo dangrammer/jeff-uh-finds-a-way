@@ -7,9 +7,6 @@
   <%= f.label :content %>
   <%= f.text_area :content %>
   <br>
-  <%= f.label :user_id %>
-  <%= f.collection_select :user_id, @users, :id, :full_name %>
-  <br>
   <%= f.label :category_id %>
   <%= f.collection_select :category_id, @categories, :id, :name %>
   <br>

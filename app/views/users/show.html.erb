@@ -9,6 +9,11 @@
 <br>
 <img src="<%= @user.img_url %>", alt="User Photo", height="100", width="100">
 <br>
+
+<% if @user == @current_user  %>
 <%= button_to 'Edit Account', edit_user_path, method: :get %>
 <br>
 <%= button_to 'Delete Account', user_path, method: :delete %>
+<br>
+<%= button_to 'Log Out', logout_path, method: :delete %>
+<% end %>
