@@ -10,6 +10,26 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1><%= link_to 'Jeff, uh, Finds a Way', posts_path %></h1>
+      <h2>The Jeff Goldblum Fan Forum</h2>
+        <nav>
+          <%= link_to 'Home', posts_path %>
+          <%= link_to 'Categories', categories_path %>
+          <% if logged_in? %>
+            <%= link_to 'Make a Post', new_post_path %>
+            <%= link_to 'Profile', user_path(current_user) %>
+            <h4>Welcome to Jeffland, <%= current_user.first_name %>!</h4>
+            <%= button_to 'Logout', logout_path, method: :delete %>
+          <% else %>
+            <%= link_to "Login", login_path %>
+            <%= link_to "Sign Up", new_user_path %>   
+          <% end %>
+        </nav>
+    </header>
+    <div>
+      <%= yield %>
+    </div>
   </body>
+
 </html>

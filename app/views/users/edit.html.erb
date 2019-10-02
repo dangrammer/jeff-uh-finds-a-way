@@ -1,5 +1,13 @@
 <h1>Edit Profile</h1>
 
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li style="color:red"><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @user do |f| %>
   <%= f.label :first_name %>
   <%= f.text_field :first_name %>
@@ -10,9 +18,6 @@
   <%= f.label :handle %>
   <%= f.text_field :handle %>
   <br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br>
   <%= f.label :location %>
   <%= f.text_field :location %>
   <br>
@@ -21,6 +26,12 @@
   <br>
   <%= f.label :img_url %>
   <%= f.text_field :img_url %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
   <br>
   <%= f.submit %>
 <% end %>

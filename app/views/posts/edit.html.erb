@@ -1,17 +1,25 @@
-<h1>Edit your post</h1>
+<h1>Edit Post</h1>
+
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li style="color:red"><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_for @post do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <br>
-  <%= f.label :user_id %>
-  <%= f.collection_select :user_id, @users, :id, :full_name %>
-  <br>
   <%= f.label :category_id %>
   <%= f.collection_select :category_id, @categories, :id, :name %>
+  <br>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :content %><br>
+  <%= f.text_area :content %>
+  <br>
+  <%= f.label :img_url %><br>
+  <%= f.text_field :img_url %>
   <br>
   <%= f.submit %>
 <% end %>

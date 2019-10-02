@@ -1,7 +1,26 @@
+<br>
+### temporary identification heading: posts/index ###
+<br>
+<img src="<%= @post.img_url %>", alt="Post Photo", height="200", width="400">
 <h1><%= @post.title %></h1>
-<h3>By: @<%= link_to @post.user.handle, user_path(@post.user) %></h3>
+<h3>By: <%= link_to @post.user.handle, user_path(@post.user) %></h3>
 <p><%= @post.content %></p>
 <br>
+<% if logged_in? && @owner %>
 <%= button_to 'Edit Post', edit_post_path, method: :get %>
 <br>
 <%= button_to 'Delete Post', post_path(@post), method: :delete %>
+<% end %>
+<br>
+<h4>Comments</h4>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li><%= link_to comment.user, user_path(comment.user) %><%= comment.content %></li>
+  <% end %>
+</ul>
+<br>
+<p>Add a Comment</p>
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.text_area :content %><br>
+  <%= f.submit 'Submit' %>
+<% end %>

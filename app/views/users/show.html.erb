@@ -1,7 +1,7 @@
-<h1>Your Profile</h1>
-
-<h2>Name: <%= @user.full_name %></h2>
+<br>
+### temporary identification heading: users/show(profile if logged in) ###
 <ul>
+  <li>Name: <%= @user.full_name %></li>
   <li>Handle: @<%= @user.handle %></li>
   <li>Location: <%= @user.location %></li>
   <li>Bio: <%= @user.bio %></li>
@@ -10,10 +10,15 @@
 <img src="<%= @user.img_url %>", alt="User Photo", height="100", width="100">
 <br>
 
-<% if @user == @current_user  %>
-<%= button_to 'Edit Account', edit_user_path, method: :get %>
-<br>
-<%= button_to 'Delete Account', user_path, method: :delete %>
-<br>
-<%= button_to 'Log Out', logout_path, method: :delete %>
+<% if logged_in? && @owner %>
+  <%= button_to 'Edit Profile', edit_user_path, method: :get %>
+  <br>
+  <%= button_to 'Delete Account', user_path, method: :delete %>
 <% end %>
+
+<h2>Posts</h2>
+<ul>
+  <% @user.posts.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %></li>
+  <% end %>
+</ul>

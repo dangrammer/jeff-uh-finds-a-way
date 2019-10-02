@@ -1,10 +1,7 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
-  skip_before_action :require_login, only: [:new, :create] 
-
-  def index
-    @users = User.all
-  end
+  skip_before_action :require_login, only: [:new, :create, :show] 
+  before_action :set_owner?
 
   def new
     @user = User.new
@@ -29,8 +26,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
-    redirect_to user_path(@user)
+    if @user.valid?
+      @user.update(user_params.merge(id: @current_user.id))
+      redirect_to user_path(@user)
+    else
+      flash[:errors] = @user.errors.full_messages
+      redirect_to edit_user_path
+    end
   end
 
   def destroy
@@ -46,6 +48,10 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def set_owner?
+    @owner = @user == current_user
   end
 
 end
