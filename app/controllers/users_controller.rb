@@ -26,8 +26,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user.update(user_params.merge(id: @current_user.id))
     if @user.valid?
-      @user.update(user_params.merge(id: @current_user.id))
       redirect_to user_path(@user)
     else
       flash[:errors] = @user.errors.full_messages

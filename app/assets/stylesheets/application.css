@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  background-color: #A7E6E2
+}
+
+title {
+  font-family: 'Impact', Charcoal, sans-serif;
+  color: #f1f1f1
+}
+
+header {
+  padding: 10px;
+  text-align: left;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.heading {
+  display: inline-block;
+}

@@ -2,6 +2,7 @@
 ### temporary identification heading: posts/index ###
 <br>
 <img src="<%= @post.img_url %>", alt="Post Photo", height="200", width="400">
+
 <h1><%= @post.title %></h1>
 <h3>By: <%= link_to @post.user.handle, user_path(@post.user) %></h3>
 <p><%= @post.content %></p>
@@ -9,18 +10,27 @@
 <% if logged_in? && @owner %>
 <%= button_to 'Edit Post', edit_post_path, method: :get %>
 <br>
-<%= button_to 'Delete Post', post_path(@post), method: :delete %>
+<%= button_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: "Confirm delete post?"} %>
 <% end %>
-<br>
+
 <h4>Comments</h4>
 <ul>
   <% @post.comments.each do |comment| %>
-    <li><%= link_to comment.user, user_path(comment.user) %><%= comment.content %></li>
+    <li>
+      <%= link_to "@#{comment.user.handle}", user_path(comment.user) %>: <%= comment.content %>
+      <% if logged_in? && comment.user_id == current_user.id %>
+        <%= button_to 'Edit Comment', edit_comment_path(comment), method: :get %>
+        <%= button_to 'Delete Comment', comment_path(comment), method: :delete, data: {confirm: "Confirm delete comment?"} %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
-<br>
+
+<% if logged_in? && current_user %>
 <p>Add a Comment</p>
-<%= form_for [@post, @comment] do |f| %>
+<%= form_for @comment do |f| %>
   <%= f.text_area :content %><br>
+  <%= f.hidden_field :post_id, :value => @post.id %>
   <%= f.submit 'Submit' %>
+<% end %>
 <% end %>

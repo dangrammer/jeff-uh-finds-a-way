@@ -33,8 +33,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.valid?
-      @post.update(post_params.merge(user_id: @current_user.id))
+    @post.update(post_params.merge(user_id: @current_user.id))
+    if @post.valid? 
       redirect_to post_path(@post)
     else
       flash[:errors] = @post.errors.full_messages
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :user_id, :category_id)
+    params.require(:post).permit(:title, :content, :img_url, :user_id, :category_id)
   end
 
   def find_post

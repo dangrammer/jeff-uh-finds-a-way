@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :posts do
-    resources :comments, except: [:index, :show]
-  end
+  resources :posts
+  resources :comments, except: [:index, :show]
   resources :categories, only: [:index, :show]
   resources :users, except: [:index]
   get '/login' => 'sessions#new'

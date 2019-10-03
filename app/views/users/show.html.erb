@@ -13,7 +13,7 @@
 <% if logged_in? && @owner %>
   <%= button_to 'Edit Profile', edit_user_path, method: :get %>
   <br>
-  <%= button_to 'Delete Account', user_path, method: :delete %>
+  <%= button_to 'Delete Profile', user_path, method: :delete, data: {confirm: "Confirm delete profile?"} %>
 <% end %>
 
 <h2>Posts</h2>
