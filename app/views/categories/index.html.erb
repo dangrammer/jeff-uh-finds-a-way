@@ -1,9 +1,12 @@
-<br>
-### temporary identification heading: categories/index ###
+<div class="grid">
 <% @categories.each do |category| %>
-  <h3><%= link_to category.name, category_path(category) %></h3>
-  <p><%= category.description %></p>
-  <br>
+  <div class="cell">
+    <h3 class="category"><%= link_to category.name, category_path(category) %></h3>
+    <p><%= category.description %></p>
+  </div>
 <% end %>
+</div>
+
+
 
 

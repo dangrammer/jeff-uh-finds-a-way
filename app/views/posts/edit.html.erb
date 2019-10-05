@@ -1,25 +1,28 @@
-<h1>Edit Post</h1>
+<div class="postedit">
+  <h1>Edit Post</h1>
 
-<% if flash[:errors] %>
-  <ul>
-    <% flash[:errors].each do |error| %>
-      <li style="color:red"><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <% if flash[:errors] %>
+    <ul>
+      <% flash[:errors].each do |error| %>
+        <li style="color:red"><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
-<%= form_for @post do |f| %>
-  <%= f.label :category_id %>
-  <%= f.collection_select :category_id, @categories, :id, :name %>
-  <br>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label :content %><br>
-  <%= f.text_area :content %>
-  <br>
-  <%= f.label :img_url %><br>
-  <%= f.text_field :img_url %>
-  <br>
-  <%= f.submit %>
-<% end %>
+  <%= form_for @post do |f| %>
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, @categories, :id, :name %>
+    <br>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+    <br>
+    <%= f.label :img_url %><br>
+    <%= f.text_field :img_url %>
+    <br>
+    <br>
+    <%= f.submit %>
+  <% end %>
+</div>

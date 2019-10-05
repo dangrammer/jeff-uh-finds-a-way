@@ -16,23 +16,137 @@
 
 body {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  background-color: #A7E6E2
-}
-
-title {
-  font-family: 'Impact', Charcoal, sans-serif;
-  color: #f1f1f1
+  background-color: #A7E6E2;
+  color: rgb(76, 48, 108);
 }
 
 header {
-  padding: 10px;
-  text-align: left;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  width: 98%;
+  height: 100px;
+  z-index: 10;
+  background-color: #A7E6E2;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.nav li {
-  display: inline-block;
+header.title {
+  font-family: 'Impact', Charcoal, sans-serif;
+  align-self: left;
 }
 
-.heading {
-  display: inline-block;
+header.options {
+  font-family: 'Impact', Charcoal, sans-serif;
+  align-self: center;
+}
+
+header.profile {
+  font-family: 'Impact', Charcoal, sans-serif;
+  align-self: right;
+}
+
+a {
+  color: rgb(108, 48, 89) 
+}
+
+a:visited { 
+  text-decoration: none;
+}
+
+a:hover { 
+  color: rgb(252, 1, 202); 
+}
+
+.main {
+  margin-top: 100px;
+  min-height: 80vh;
+  text-align: center;
+  background: url('https://previews.dropbox.com/p/thumb/AAnV7TS34mD4YhFjw2wA00aH7ox1QyrXoWhQgoDGiFqxZ3H4ztnzQrnNuiRnfFuaH9w62trcG8u7xsKnGKVocpMq4thNXMjDxMiuuFH_alCfNh-lNvM4dGSCPeBRASwfi2sm-_Ftsg3d34rMl8CI3gM2LFh8x2_Jmal3rjJpHAHuZAQ72QFYPmQWgTRqcVGLQmJuTaUnAd3pLpmfJ9ITISDTp0IagvZ2miG-BUHxbEqMUw3yygX48ojePMyPiUCmTMOb8V8dDrVOuucVwYAE-nRt0sB9PXEVRSTgexHu3HhcaR5rOs8H87A9tW9SALrV2sFciF7CvhXLBNprRBPmhjsTxakCz7EKB-lmkkH8VB7YQNzNcHYqK_-OpUEZm09I83_uqqPQayzmWodelGxtLjv5lqP7hWpR_Ix-SxushKqomPHJso6hR5GKEYsrKZNwK9CKgZ22xoQNX6nPlOBKQ1xT/p.jpeg?fv_content=true&size_mode=5') no-repeat center center fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.grid {
+  display: flex;                       
+  flex-wrap: wrap;                     
+  justify-content: space-around;
+  align-content: stretch;
+}
+
+.cell {
+  flex: 0 0 32%;  
+  width: 30%; 
+  height: 30%;
+  margin-bottom: 45px;
+  margin-top: 45px; 
+}
+
+.home {
+  padding-top: 10px;
+}
+
+.postbody {
+  border-bottom: 1px solid rgb(148, 75, 148);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 89%;
+  margin: auto;
+}
+
+.login {
+  padding-top: 100px;
+  padding-bottom: 100px; 
+}
+
+.signup {
+  padding-top: 100px;
+  padding-bottom: 100px; 
+}
+
+.category {
+  padding-top: 10px;
+}
+
+.postshow {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.postedit {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.newpost {
+  padding-top: 100px;
+  padding-bottom: 100px; 
+}
+
+.usershow {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.useredit {
+  padding-top: 100px;
+  padding-bottom: 100px; 
+}
+
+.commentedit {
+  padding-top: 100px;
+  padding-bottom: 100px; 
 }

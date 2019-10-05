@@ -1,37 +1,41 @@
-<h1>Create User Account</h1>
+<div class="signup">
+  <h1>Create User Profile</h1>
 
-<% if flash[:errors] %>
-  <ul>
-    <% flash[:errors].each do |error| %>
-      <li style="color:red"><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <% if flash[:errors] %>
+    <ul>
+      <% flash[:errors].each do |error| %>
+        <li style="color:red"><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
-<%= form_for @user do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <br>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <br>
-  <%= f.label :handle %>
-  <%= f.text_field :handle %>
-  <br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <br>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <br>
-  <%= f.label :bio %>
-  <%= f.text_field :bio %>
-  <br>
-  <%= f.label :img_url %>
-  <%= f.text_field :img_url %>
-  <br>
-  <%= f.submit %>
-<% end %>
+  <%= form_for @user do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    <br>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+    <br>
+    <%= f.label :bio %>
+    <%= f.text_field :bio %>
+    <br>
+    <%= f.label :img_url %>
+    <%= f.text_field :img_url %>
+    <br>
+    <br>
+    <%= f.label :handle %>
+    <%= f.text_field :handle %>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <br>
+    <br>
+    <%= f.submit %>
+  <% end %>
+</div>

@@ -1,15 +1,16 @@
-<h1>Edit comment for <%= @post.title %><h1>
+<div class="commentedit">
+  <h1>Edit comment for <%= @comment.post.title %><h1>
 
-<% if flash[:errors] %>
-  <ul>
-    <% flash[:errors].each do |error| %>
-      <li style="color:red"><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <% if flash[:errors] %>
+    <ul>
+      <% flash[:errors].each do |error| %>
+        <li style="color:red"><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
-<%= form_for @comment do |f| %>
-  <%= f.text_area :content %><br>
-  <%= f.hidden_field :post_id, :value => @post.id %>
-  <%= f.submit 'Submit' %>
-<% end %>
+  <%= form_for @comment do |f| %>
+    <%= f.text_area :content %><br>
+    <%= f.submit 'Submit' %>
+  <% end %>
+</div>

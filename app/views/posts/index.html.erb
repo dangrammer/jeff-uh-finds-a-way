@@ -1,5 +1,28 @@
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= link_to post.title, post_path(post) %></li>
-  <% end %>
-</ul>
+<div class="home">
+  <ul>
+    <% @sorted_posts.each do |post| %>
+      <div class="postbody">
+        <li><h4><%= link_to "@#{post.user.handle}", user_path(post.user) %></h4></li>
+
+        <% if post.img_url %>
+          <img src="<%= post.img_url %>", alt="Post Photo", height="250", max-width="350">
+        <% else %>
+          <img src="https://i.ytimg.com/vi/dJgVJd-egX8/maxresdefault.jpg", alt="Post Photo", height="250", width="350">
+        <% end %>
+
+        <li><h1><%= link_to post.title, post_path(post) %></h1></li>
+        <li><p><%= post.content %><p></li>
+        
+        <li>Comments:</li>
+        <ul>
+          <% post.comments.each do |comment| %>
+            <li><%= link_to "@#{comment.user.handle}", user_path(comment.user) %>: <%= comment.content %></li>
+          <% end %>
+        </ul>
+        <% if logged_in? && current_user %>
+          <p><%= button_to "Comment", post_path(post), method: :get %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </ul>
+</div>

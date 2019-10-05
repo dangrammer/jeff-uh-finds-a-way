@@ -1,15 +1,20 @@
-<h1> Log In </h1>
+<div class="login">
 
-<% if flash[:notice] %>
-  <div style='color:red'><%= flash[:notice] %></div>
-<% end %>
-<br>
-<%= form_tag login_path do %>
-  <%= label_tag :handle %>
-  <%= text_field_tag :handle %>
+  <h1> Log In </h1>
+
+  <% if flash[:notice] %>
+    <div style='color:red'><%= flash[:notice] %></div>
+  <% end %>
   <br>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <br>
-  <%= submit_tag 'Login' %>
-<% end %>
+  <%= form_tag login_path do %>
+    <%= label_tag :handle %>
+    <%= text_field_tag :handle %>
+    <br>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+    <br>
+    <br>
+    <%= submit_tag 'Login' %>
+  <% end %>
+
+<div>
