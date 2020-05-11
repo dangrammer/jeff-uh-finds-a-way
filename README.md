@@ -29,6 +29,30 @@ Jeff, uh, Finds a Way is a fan forum for none other than the eccentric, enigmati
   <br/>
   ![Scroll Public Thread Demo](app/assets/gifs/scroll_public_thread.gif)
 
+  Browse Categories
+  <br/>
+  ![Browse Categories Demo](app/assets/gifs/browse_categories.gif)
+
+  View Poster Profile
+  </br>
+  ![View Poster Profile Demo](app/assets/gifs/view_poster_profile.gif)
+
+  Login/Signup
+  </br>
+  ![Login/Signup Demo](app/assets/gifs/login_signup.gif)
+
+  Create Comment
+  </br>
+  ![Create Comment Demo](app/assets/gifs/create_comment.gif)
+
+  Create Post
+  </br>
+  ![Create Post Demo](app/assets/gifs/create_post.gif)
+
+  Edit Profile
+  </br>
+  ![Edit Profile Demo](app/assets/gifs/edit_profile.gif)
+
 ## How To Install and Run
 
   1. fork (optional) then clone or download this repository to local machine
