@@ -1,3 +1,5 @@
+# Jeff, uh, Finds a Way
+
 <img 
   src="app/assets/images/login_page.png" 
   alt="Login page" 
@@ -20,6 +22,12 @@ Jeff, uh, Finds a Way is a fan forum for none other than the eccentric, enigmati
 
 ## Gem Dependencies
   - bcrypt ~> 3.1.7
+
+## Screenshots
+
+  Scroll Public Thread On Homepage
+  <br/>
+  ![Scroll Public Thread Demo](app/assets/gifs/scroll_public_thread.gif)
 
 ## How To Install and Run
 
