@@ -15,13 +15,13 @@ Jeff, uh, Finds a Way is a fan forum for none other than the eccentric, enigmati
   - ruby 2.6.1
 
 ## Rails Version
-  - rails ~> 6.0.0
+  - rails 6.0.3.1
 
 ## Database
-  - postgreSQL
+  - postgreSQL 1.2.3
 
 ## Gem Dependencies
-  - bcrypt ~> 3.1.7
+  - bcrypt 3.1.13
 
 ## Screenshots
 
